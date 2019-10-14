@@ -53,8 +53,8 @@ function adapt(event) {
         let baseX = this.style.width.slice(0, -2);
         let baseY = this.style.height.slice(0, -2);
 
-        let decalX = (baseX / 2) - mouseX + 32;
-        let decalY = (baseY / 2) - mouseY + 32;
+        let decalX = (baseX - mouseX + 32) / (baseX - 64);
+        let decalY = (baseY - mouseY + 32) / (baseX - 64);
 
         let exp = index + 100;
         let frame = frames[index];
@@ -71,8 +71,8 @@ function adapt(event) {
 
         div.style.width = x + "px"; 
         div.style.height = y + "px";
-        div.style.left = (x * decalX * 0.005 * (expose ** (max - index - 1) - 1) - x / 3 * frame_x) + "px";
-        div.style.top = (y * decalY * 0.005 * (expose ** (max - index - 1) - 1) - y / 3 * frame_y) + "px";
+        div.style.left = (x * decalX * (expose ** (max - index - 1) - 1) - x / 3 * frame_x + 64) + "px";
+        div.style.top = (y * decalY * (expose ** (max - index - 1) - 1) - y / 3 * frame_y + 64) + "px";
 
         base.appendChild(div);
     }
