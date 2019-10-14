@@ -71,8 +71,8 @@ function adapt(event) {
 
         div.style.width = x + "px"; 
         div.style.height = y + "px";
-        div.style.left = ((x/6 + decalX)* (expose ** (max - index - 1) - 1) - x / 3 * frame_x) + "px";
-        div.style.top = ((y/6 + decalY) * (expose ** (max - index - 1) - 1) - y / 3 * frame_y) + "px";
+        div.style.left = (x * decalX * 0.005 * (expose ** (max - index - 1) - 1) - x / 3 * frame_x) + "px";
+        div.style.top = (y * decalY * 0.005 * (expose ** (max - index - 1) - 1) - y / 3 * frame_y) + "px";
 
         base.appendChild(div);
     }
