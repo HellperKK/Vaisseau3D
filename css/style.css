@@ -1,0 +1,17 @@
+#base {
+    width: 1920px;
+    height: 1440px;
+}
+
+#hitbox {
+    position: absolute;
+    z-index: 100;
+}
+
+.level {
+    background-image: url("../images/Fond1.png");
+    background-size: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
