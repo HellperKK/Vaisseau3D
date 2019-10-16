@@ -1,6 +1,6 @@
 #base {
-    width: 1920px;
-    height: 1440px;
+    width: 445px;
+    height: 318px;
 }
 
 #hitbox {
@@ -9,10 +9,8 @@
 }
 
 .level {
-    background-size: 100%;
+    background-size: cover;
     position: absolute;
-    top: 0px;
-    left: 0px;
 }
 
 .level-base {

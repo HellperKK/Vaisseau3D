@@ -109,8 +109,10 @@ function adapt() {
     
         div.style.width = x + "px"; 
         div.style.height = y + "px";
-        div.style.left = (x * decalX * (expose ** (max - index - 1) - 1) - x / 3 * frame_x - 64 + randX) + "px";
-        div.style.top = (y * decalY * (expose ** (max - index - 1) - 1) - y / 3 * frame_y - 64 + randY) + "px";
+        div.style.left = (x * decalX * (expose ** (max - index - 1) - 1) - x / 3 * frame_x + 16 + randX) + "px";
+        div.style.top = (y * decalY * (expose ** (max - index - 1) - 1) - y / 3 * frame_y + 16 + randY) + "px";
+        div.style.marginRight = (x * decalX * (expose ** (max - index - 1) - 1) - x / 3 * frame_x + 64 + randX) + "px";
+        div.style.marginBottom = (y * decalY * (expose ** (max - index - 1) - 1) - y / 3 * frame_y + 64 + randY) + "px";
 
         base.appendChild(div);
     }
