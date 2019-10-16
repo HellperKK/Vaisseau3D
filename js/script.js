@@ -13,11 +13,10 @@ let mouseY = 0;
 let color_index = 1;
 let color_distance = 15;
 
+let wall_add = 4;
+let wait = 30;
+
 for (let index = 0; index < max; index++) {
-    if (Math.floor(index / 3) == 0)
-    {
-        temp = Math.floor(Math.random() * 9);
-    }
     frames.push(4);
 }
 
@@ -58,16 +57,16 @@ function adapt() {
     let elems = document.querySelectorAll(".level");
 
     color_index = ((color_index + 1) % color_distance);
-    console.log(color_index);
+    frames.pop();
+    frames.unshift(wall_add);
     for (let index = 0; index < max; index++) {
-        console.log(index);
         base.removeChild(elems[index]);
 
         let baseX = hitbox.style.width.slice(0, -2);
         let baseY = hitbox.style.height.slice(0, -2);
 
-        let decalX = (baseX - mouseX + 32) / (baseX - 64);
-        let decalY = (baseY - mouseY + 32) / (baseX - 64);
+        let decalX = (mouseX + 32) / (baseX - 64) / 3;
+        let decalY = (mouseY + 32) / (baseX - 64) / 2.5;
 
         let exp = index + 100;
         let frame = frames[index];
@@ -78,6 +77,17 @@ function adapt() {
         let div = document.createElement("div");
 
         div.classList.add("level");
+
+        if ((color_index == 0) && (wait == 0)) {
+            wall_add = Math.floor(Math.random() * 9);
+            wait = 180;
+        }
+        else if (wait > 0) {
+            wait--;
+        }
+        else {
+            wall_add = 4;
+        }
 
         if (index == (max - 1)) {
             div.classList.add("level-black");
@@ -96,7 +106,7 @@ function adapt() {
 
         let randX = Math.floor(Math.random() * 5) - 2;
         let randY = Math.floor(Math.random() * 5) - 2;
-
+    
         div.style.width = x + "px"; 
         div.style.height = y + "px";
         div.style.left = (x * decalX * (expose ** (max - index - 1) - 1) - x / 3 * frame_x - 64 + randX) + "px";
