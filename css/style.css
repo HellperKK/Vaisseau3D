@@ -9,9 +9,20 @@
 }
 
 .level {
-    background-image: url("../images/Fond1.png");
     background-size: 100%;
     position: absolute;
     top: 0px;
     left: 0px;
+}
+
+.level-base {
+    background-image: url("../images/Fond1.png");
+}
+
+.level-green {
+    background-image: url("../images/Fond2.png");
+}
+
+.level-black {
+    background-image: url("../images/FondNoir.png");
 }
