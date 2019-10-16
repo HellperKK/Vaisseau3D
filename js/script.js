@@ -1,7 +1,7 @@
 let base = document.querySelector("#base");
 let hitbox = document.querySelector("#hitbox");
 
-let max = 70;
+let max = 50;
 let expose = 1.02;
 
 let frames = []
@@ -22,7 +22,7 @@ for (let index = 0; index < max; index++) {
 
 for (let index = 0; index < max; index++) {
 
-    let exp = index + 100;
+    let exp = index + 30;
     let frame = frames[index];
 
     let frame_x = frame % 3;
@@ -68,7 +68,7 @@ function adapt() {
         let decalX = (mouseX + 32) / (baseX - 64) / 3;
         let decalY = (mouseY + 32) / (baseX - 64) / 2.5;
 
-        let exp = index + 100;
+        let exp = index + 30;
         let frame = frames[index];
 
         let frame_x = frame % 3;
